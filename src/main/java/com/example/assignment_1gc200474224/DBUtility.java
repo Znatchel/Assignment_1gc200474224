@@ -63,5 +63,43 @@ public class DBUtility {
         }
         return nukes;
     }
+    public static ObservableList<PieChart.Data> getYearSummary()
+    {
+        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
 
+        //create the sql string we want to run on the database
+        String sql ="SELECT Entity, `nuclear_weapons_stockpile`" +
+
+                "FROM nuclearoption.`nuclear-warhead-stockpiles`" +
+
+                "WHERE Year LIKE '2000' AND nuclear_weapons_stockpile > '0';";
+
+
+
+        //the try () is called "try with resources".  Anything opened in the () will
+        //automatically close when the try block is done.
+        try(
+                //1.  connect to the database
+                Connection conn = DriverManager.getConnection(connectUrl,user,pw);
+
+                //2.  create a statement object
+                Statement statement = conn.createStatement();
+
+                //3.  use the statement object to run the sql and return a ResultSet object
+                ResultSet resultSet = statement.executeQuery(sql);
+        )
+        {
+            //4.  loop over the resultSet and data points for our PieChart.Data
+            while (resultSet.next())
+            {
+                String Entity = resultSet.getString("Entity");
+                int nuclear_weapons_stockpile = resultSet.getInt("nuclear_weapons_stockpile");
+                pieChartData.add(new PieChart.Data(Entity,nuclear_weapons_stockpile));
+            }
+        } catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return pieChartData;
+    }
 }
