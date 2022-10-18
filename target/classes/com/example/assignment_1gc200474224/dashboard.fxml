@@ -8,11 +8,11 @@
 <?import javafx.scene.layout.BorderPane?>
 
 
-<AnchorPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.assignment_1gc200474224.dashboardController">
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.assignment_1gc200474224.dashboardController">
    <children>
       <BorderPane prefHeight="800.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
-            <Label prefHeight="86.0" prefWidth="151.0" text="              Dashboard" BorderPane.alignment="CENTER" />
+            <Label prefHeight="86.0" prefWidth="190.0" text="      Nuclear Weapons By Country" BorderPane.alignment="CENTER" />
          </top>
          <center>
             <PieChart fx:id="pieChart" BorderPane.alignment="CENTER" />

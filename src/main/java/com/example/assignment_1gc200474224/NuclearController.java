@@ -1,11 +1,13 @@
 package com.example.assignment_1gc200474224;
 
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.fxml.Initializable;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.IOException;
 import java.net.URL;
 
 import java.util.ResourceBundle;
@@ -35,6 +37,10 @@ public class NuclearController implements Initializable {
     @FXML
     private Label totalNukesLabel;
 
+    @FXML
+    private void viewTable(ActionEvent event) throws IOException {
+        SceneChanger.changeScenes(event,"dashboard.fxml");
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
