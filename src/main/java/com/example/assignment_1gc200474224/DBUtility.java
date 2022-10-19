@@ -3,13 +3,10 @@ package com.example.assignment_1gc200474224;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.PieChart;
-import javafx.scene.chart.XYChart;
+
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.TreeMap;
-import java.util.TreeSet;
 
 
 public class DBUtility {
@@ -33,8 +30,7 @@ public class DBUtility {
         //create the sql string we want to run on the database
         String sql = "SELECT * FROM nuclearoption.`nuclear-warhead-stockpiles`";
 
-        //the try () is called "try with resources".  Anything opened in the () will
-        //automatically close when the try block is done.
+
         try(
                 //1.  connect to the database
                 Connection conn = DriverManager.getConnection(connectUrl,user,pw);

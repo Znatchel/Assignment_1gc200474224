@@ -14,8 +14,8 @@ public class Main extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("dashboard.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         stage.setTitle("Nuclear World");
-        //Image image = new Image("resources/com.example.assignment_1gc200474224/icon.jpg");
-        //stage.getIcons().add(image);
+
+        stage.getIcons().add(new Image("https://i.imgur.com/9EADWEH.png"));
         stage.setScene(scene);
         stage.show();
 
